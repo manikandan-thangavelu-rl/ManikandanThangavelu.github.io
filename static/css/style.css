@@ -11,6 +11,9 @@ html{
     background-repeat: no-repeat;
     font-family: CaviarDreams;
 }   
+body{
+    margin: 0;
+}
 #infoContents{
     text-align: center;
     font-weight: normal;
@@ -19,8 +22,8 @@ html{
     top: 27%;
 }
 #info{  
-    width: 100%;
-    height: 100%;
+    max-width: 100vw;
+    height: 100vh;
 }
 #myName{
     color: white;
