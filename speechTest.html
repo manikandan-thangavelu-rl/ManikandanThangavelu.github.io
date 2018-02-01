@@ -5,9 +5,9 @@
         </title>
     </head>
     <body>
-            <input type="file" name="audio" accept="audio/*" capture>
-            <audio id="player" controls></audio>
-            <script>
+<!--             <audio id="player" controls></audio> -->
+            <video autoplay></video>
+<!--             <script>
               var recorder = document.getElementById('recorder');
               var player = document.getElementById('player');
             
@@ -16,6 +16,22 @@
                 // Do something with the audio file.
                 player.src =  URL.createObjectURL(file);
               });
-            </script>
+            </script> -->
+        <script>
+        navigator.getUserMedia  = navigator.getUserMedia ||
+                          navigator.webkitGetUserMedia ||
+                          navigator.mozGetUserMedia ||
+                          navigator.msGetUserMedia;
+
+        var video = document.querySelector('video');
+
+        if (navigator.getUserMedia) {
+          navigator.getUserMedia({audio: true, video: true}, function(stream) {
+            video.src = window.URL.createObjectURL(stream);
+          }, errorCallback);
+        } else {
+          video.src = 'somevideo.webm'; // fallback.
+        }
+        </script>
     </body>
 </html>
