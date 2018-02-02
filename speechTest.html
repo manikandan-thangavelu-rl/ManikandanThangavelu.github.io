@@ -17,16 +17,14 @@
                 player.src =  URL.createObjectURL(file);
               });
             </script>
-<!--        <video autoplay></video>
-
-<script>
+   <script>
   var errorCallback = function(e) {
     console.log('Reeeejected!', e);
   };
 
   // Not showing vendor prefixes.
-  navigator.getUserMedia({video: true, audio: true}, function(localMediaStream) {
-    var video = document.querySelector('video');
+  navigator.getUserMedia({audio: true}, function(localMediaStream) {
+    var video = document.querySelector('audio');
     video.src = window.URL.createObjectURL(localMediaStream);
 
     // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
@@ -35,6 +33,6 @@
       // Ready to go. Do some stuff.
     };
   }, errorCallback);
-</script> -->
+</script>
     </body>
 </html>
