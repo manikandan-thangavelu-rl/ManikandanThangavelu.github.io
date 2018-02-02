@@ -75,6 +75,7 @@
       
       au.controls = true;
       au.src = url;
+	    alert(au.error.code);
       hf.href = url;
       hf.download = new Date().toISOString() + '.wav';
       hf.innerHTML = hf.download;
