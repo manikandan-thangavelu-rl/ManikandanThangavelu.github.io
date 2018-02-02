@@ -5,8 +5,9 @@
         </title>
     </head>
     <body>
-<!--             <audio id="player" controls></audio> -->
-<!--             <script>
+        <audio id="player" controls></audio>
+        <input type="file" accept="audio/*;capture=microphone">
+           <script>
               var recorder = document.getElementById('recorder');
               var player = document.getElementById('player');
             
@@ -15,8 +16,8 @@
                 // Do something with the audio file.
                 player.src =  URL.createObjectURL(file);
               });
-            </script> -->
-       <video autoplay></video>
+            </script>
+<!--        <video autoplay></video>
 
 <script>
   var errorCallback = function(e) {
@@ -34,6 +35,6 @@
       // Ready to go. Do some stuff.
     };
   }, errorCallback);
-</script>
+</script> -->
     </body>
 </html>
