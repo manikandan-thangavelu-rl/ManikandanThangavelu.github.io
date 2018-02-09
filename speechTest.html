@@ -17,7 +17,11 @@
                          var video = document.querySelector('audio');
                          video.srcObject = stream;
                          video.onloadedmetadata = function(e) {
-                           video.play();
+                         video.play();
+                         setTimeout(function(){
+                            stream.stop();
+                             console.log(stream);
+                         }, 3000)
                          };
                       },
                       function(err) {
