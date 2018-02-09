@@ -5,19 +5,28 @@
         </title>
     </head>
     <body>
-            <input type="file" accept="audio/*" id="recorder">
             <audio id="player" controls></audio>
             <script>
-              var recorder = document.getElementById('recorder');
-              var player = document.getElementById('player');
-            
-              recorder.addEventListener('change', function(e) {
-                var file = e.target.files[0];
-                  console.log(file);
-                // Do something with the audio file.
-                player.src =  URL.createObjectURL(file);
-                alert(URL.createObjectURL(file));
-              });
+              navigator.getUserMedia = navigator.getUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia;
+
+                if (navigator.getUserMedia) {
+                   navigator.getUserMedia({ audio: true},
+                      function(stream) {
+                         var video = document.querySelector('audio');
+                         video.srcObject = stream;
+                         video.onloadedmetadata = function(e) {
+                           video.play();
+                         };
+                      },
+                      function(err) {
+                         console.log("The following error occurred: " + err.name);
+                      }
+                   );
+                } else {
+                   console.log("getUserMedia not supported");
+                }
             </script>
     </body>
 </html>
