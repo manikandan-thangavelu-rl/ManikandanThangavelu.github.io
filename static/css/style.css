@@ -40,7 +40,7 @@ body{
     width: 100%;
     height: 100%;
 }
-.fa{
+.fab,.fas{
     position: relative;
     font-size: x-large !important;
     color: #258c7b;
@@ -80,17 +80,24 @@ body{
     visibility: visible;
     opacity: 1;
 }
+#whatsappIcon, messengerIcon{
+    display: inline-block;
+}
 
 /* Media query for desktop */
 
 @media only screen and (min-width: 768px) {
+
+#whatsappIcon, #messengerIcon{
+    display: none;
+}
 #myName{
     font-size: 46px;
 }
 #about{
     font-size: 20px;
 }
-.fa{
+.fab, .fas{
     font-size: x-large !important;
 }
 .tooltip {
